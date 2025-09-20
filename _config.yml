@@ -1,4 +1,4 @@
 title: Ziloņa Stāsti
-remote_theme: hubertchoo/stellar-jekyll-theme
+remote_theme: zerostaticthemes/jekyll-atlantic
 plugins:
   - jekyll-remote-theme
