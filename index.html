@@ -1,0 +1,19 @@
+---
+layout: default
+---
+
+<h1>My Blog</h1>
+
+<ul>
+  {% for post in site.posts %}
+    <li style="margin-bottom: 2rem;">
+      <a href="{{ post.url }}">
+        <img src="{{ post.image | default: '/assets/default.jpg' }}" 
+             alt="{{ post.title }}" 
+             style="width:200px; border-radius:10px;">
+        <h2>{{ post.title }}</h2>
+      </a>
+      <p>{{ post.excerpt }}</p>
+    </li>
+  {% endfor %}
+</ul>
