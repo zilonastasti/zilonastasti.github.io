@@ -12,14 +12,14 @@
     {% include head-custom.html %}
   </head>
   <body>
-      <div id="header">
-          <section style="display:flex; align-items:center; justify-content:center; gap:1rem; margin-bottom:2rem;">
-            <img src="{{ '/assets/Logo.png' | relative_url }}" 
-                alt="{{ site.title }} Logo" 
-                style="height:80px;">
-            <h1 style="margin:0;">{{ site.title | default: site.github.repository_name }}</h1>
-            </section>
-      </div>
+    <header id="header" style="width:100%; padding:1rem 0; background-color:#0b0b2b; text-align:center; box-shadow:0 2px 5px rgba(0,0,0,0.3);">
+    <div style="display:flex; align-items:center; justify-content:center; gap:1rem;">
+        <img src="{{ '/assets/Logo.png' | relative_url }}" 
+            alt="{{ site.title }} Logo" 
+            style="height:80px;">
+        <h1 style="margin:0; color:#fff;">{{ site.title | default: site.github.repository_name }}</h1>
+    </div>
+    </header>
 
     <div class="wrapper">
 
