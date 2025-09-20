@@ -1,2 +1,4 @@
 title: Ziloņa Stāsti
-theme: Jekyll Atlantic
+remote_theme: hubertchoo/stellar-jekyll-theme
+plugins:
+  - jekyll-remote-theme
