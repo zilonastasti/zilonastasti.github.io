@@ -1,39 +1,38 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>{{ page.title }} | {{ site.title }}</title>
-  <link rel="stylesheet" href="{{ '/assets/style.css' | relative_url }}">
-</head>
-<body>
+<html lang="{{ site.lang | default: "en-US" }}">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    {% seo %}
+    <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    {% include head-custom.html %}
+  </head>
+  <body>
+    <!-- Header (same as default) -->
+    <header id="header" style="width:100%; padding:1rem 0; background-color:#0b0b2b; text-align:center; box-shadow:0 2px 5px rgba(0,0,0,0.3);">
+      <div style="display:flex; align-items:center; justify-content:center; gap:1rem; padding-left:1rem;">
+        <img src="{{ '/assets/Logo.png' | relative_url }}" 
+             alt="{{ site.title }} Logo" 
+             style="height:80px;">
+        <h1 style="margin:0; color:#fff;">{{ site.title | default: site.github.repository_name }}</h1>
+      </div>
+    </header>
 
-  <!-- Logo / Header -->
-  <header style="text-align:center; margin-bottom:2rem;">
-    <a href="{{ site.url | relative_url }}">
-      <img src="/assets/Logo.png" alt="Logo" style="height:100px;">
-    </a>
-  </header>
+    <!-- Post Content Section -->
+    <main class="wrapper" style="padding:2rem; max-width:800px; margin:0 auto;">
+      {% if page.image %}
+        <div style="text-align:center; margin-bottom:2rem;">
+          <img src="{{ page.image | relative_url }}" alt="{{ page.title }}" style="max-width:100%; border-radius:10px;">
+        </div>
+      {% endif %}
 
-  <!-- Post Image -->
-  {% if page.image %}
-    <div style="text-align:center; margin-bottom:2rem;">
-      <img src="{{ page.image | relative_url }}" alt="{{ page.title }}" style="max-width:600px; border-radius:10px;">
-    </div>
-  {% endif %}
+      <h1>{{ page.title }}</h1>
+      <p style="color:gray; margin-bottom:2rem;">{{ page.date | date: "%B %d, %Y" }}</p>
 
-  <!-- Post Title -->
-  <h1 style="text-align:center;">{{ page.title }}</h1>
-  <p style="text-align:center; color:gray;">{{ page.date | date: "%B %d, %Y" }}</p>
-
-  <!-- Post Content -->
-  <div class="post-content">
-    {{ content }}
-  </div>
-
-  <!-- Footer -->
-  <footer style="text-align:center; margin-top:4rem; color:gray;">
-    &copy; {{ site.time | date: "%Y" }} {{ site.title }}
-  </footer>
-
-</body>
+      <article>
+        {{ content }}
+      </article>
+    </main>
+  </body>
 </html>
