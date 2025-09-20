@@ -11,14 +11,15 @@
   <body>
     <!-- Header (same as default) -->
     <header id="header" style="width:100%; padding:1rem 0; background-color:#0b0b2b; text-align:center; box-shadow:0 2px 5px rgba(0,0,0,0.3);">
-      <div style="display:flex; align-items:center; justify-content:center; gap:1rem; padding-left:1rem;">
-        <img src="{{ '/assets/Logo.png' | relative_url }}" 
-             alt="{{ site.title }} Logo" 
-             style="height:80px;">
-        <h1 style="margin:0; color:#fff;">{{ site.title | default: site.github.repository_name }}</h1>
-      </div>
+      <a href="{{ '/' | relative_url }}" style="text-decoration:none; color:inherit;">
+        <div style="display:flex; align-items:center; justify-content:left; gap:1rem; padding-left:1rem;">
+          <img src="{{ '/assets/Logo.png' | relative_url }}" 
+              alt="{{ site.title }} Logo" 
+              style="height:80px;">
+          <h1 style="margin:0; color:#fff;">{{ site.title | default: site.github.repository_name }}</h1>
+        </div>
+      </a>
     </header>
-
     <!-- Post Content Section -->
     <main class="wrapper" style="padding:2rem; max-width:800px; margin:0 auto;">
       {% if page.image %}
