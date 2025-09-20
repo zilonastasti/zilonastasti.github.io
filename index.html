@@ -5,22 +5,21 @@ layout: default
 ---
 
 <div class="posts-grid" style="
-  display:grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap:10rem;          /* space between posts */
-  justify-items:center;
-  margin:2rem 1rem;  /* space around grid */
+  display:grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)) !important;
+  gap:3rem !important;          /* space between posts */
+  justify-items:center !important;
+  margin:3rem 1rem !important;  /* space around grid */
 ">
   {% for post in site.posts %}
     <div class="post-item" style="
-      border-radius:10px;
-      overflow:hidden;
-      text-align:left;
-      background-color: rgba(255,255,255,0.05);
-      box-shadow: none;
-      padding:3cap;
-      width:100%;
-      box-shadow:none;   /* remove shadow */
+      border-radius:10px !important;
+      overflow:hidden !important;
+      text-align:left !important;
+      background-color: rgba(255,255,255,0.05) !important;
+      padding:1rem !important;
+      width:100% !important;
+      box-shadow:none !important;   /* force remove shadow */
     ">
       <a href="{{ post.url }}" style="text-decoration:none; color:inherit;">
         <img src="{{ post.image | default: '/assets/default.jpg' }}" 
