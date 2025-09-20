@@ -32,9 +32,22 @@
       <h1>{{ page.title }}</h1>
       <p style="color:gray; margin-bottom:2rem;">{{ page.date | date: "%B %d, %Y" }}</p>
 
-      <article>
-        {{ content }}
-      </article>
+    <style>
+      .centered-article {
+        display: flex;
+        flex-direction: column;       /* Stack content vertically */
+        align-items: center;          /* Center horizontally */
+        justify-content: center;      /* Center vertically (optional) */
+        min-height: 100vh;            /* Optional: full height */
+        text-align: center;           /* Center inline text too */
+      }
+    </style>
+    
+    <article class="centered-article">
+      {{ content }}
+    </article>
+      
     </main>
   </body>
 </html>
+
