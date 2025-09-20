@@ -2,16 +2,31 @@
 layout: default
 ---
 
-<ul>
+<div class="posts-container" style="
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:2rem;
+  margin-top:2rem;
+">
   {% for post in site.posts %}
-    <li style="margin-bottom: 2rem;">
-      <a href="{{ post.url }}">
+    <div class="post-item" style="
+      flex: 1 1 300px; /* grows, shrinks, min width */
+      max-width: 300px;
+      border-radius:10px;
+      overflow:hidden;
+      text-align:center;
+      box-shadow:0 2px 8px rgba(0,0,0,0.2);
+      background-color: rgba(255,255,255,0.05);
+      padding:1rem;
+    ">
+      <a href="{{ post.url }}" style="text-decoration:none; color:inherit;">
         <img src="{{ post.image | default: '/assets/default.jpg' }}" 
              alt="{{ post.title }}" 
-             style="width:200px; border-radius:10px;">
+             style="width:100%; border-radius:10px; margin-bottom:1rem;">
         <h2>{{ post.title }}</h2>
       </a>
       <p>{{ post.excerpt }}</p>
-    </li>
+    </div>
   {% endfor %}
-</ul>
+</div>
