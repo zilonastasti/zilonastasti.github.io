@@ -1,4 +1,7 @@
 title: Ziloņa Stāsti
-remote_theme: zerostaticthemes/jekyll-atlantic
+remote_theme: wowthemesnet/affiliates-jekyll-theme
+url: "https://zilonastasti.github.io"
 plugins:
   - jekyll-remote-theme
+  - jekyll-paginate
+  - jekyll-archives
