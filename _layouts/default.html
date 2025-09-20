@@ -25,14 +25,15 @@
 
       <section>
         <div id="title">
-            <img src="{{ '/assets/Logo.png' | relative_url }}" 
-                alt="{{ site.title }} Logo" 
-                style="height:100px; margin-bottom:1rem;">
-          <h1>{{ site.title | default: site.github.repository_name }}</h1>    
+      <section style="display:flex; align-items:center; justify-content:center; gap:1rem; margin-bottom:2rem;">
+        <img src="{{ '/assets/Logo.png' | relative_url }}" 
+            alt="{{ site.title }} Logo" 
+            style="height:80px;">
+        <h1 style="margin:0;">{{ site.title | default: site.github.repository_name }}</h1>
+        </section>
           <hr>
         </div>
         {{ content }}
-
       </section>
     </div>
   </body>
